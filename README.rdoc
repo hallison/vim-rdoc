@@ -1,0 +1,34 @@
+= RDoc.vim
+
+== Description
+
+{RDoc}[http://rdoc.rubyforge.org/] syntax support for
+{Vim Editor}[http://www.vim.org/]
+
+== Install
+
+Download the {zipball}[http://www.vim.org/scripts/script.php?script_id=9]
+from Vim script page and extract in your +.vim+ directory.
+
+If you doing checkout from repository, install usin the following commands:
+
+ bash does install
+
+All sources will be copied to +.vim+ directory automatically.
+
+== Information
+
+You maybe contributes to source. So, send a feedback in
+{issue track}[http://github.com/hallison/rdoc.vim/issues].
+
+RDoc.vim is hosted on following servers:
+
+* {Github}[http://github.com/hallison/rdoc.vim]
+* {Codaset}[http://codaset.com/hallison/rdoc.vim]
+
+== Copyright
+
+Copyright (c) 2009 Hallison Batista
+
+Distributed under the MIT license.
+
