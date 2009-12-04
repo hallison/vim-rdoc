@@ -10,11 +10,18 @@
 Download the {gzipball}[http://www.vim.org/scripts/script.php?script_id=2878]
 from Vim script page and extract in your <tt>.vim</tt> directory.
 
-If you doing checkout from repository, install usin the following commands:
+If you checkout the source from repository, install usin the following
+commands:
 
  bash pool install
 
-All sources will be copied to +.vim+ directory automatically.
+This instruction will be create a Vimball and install.
+
+Updates your <tt>.vimrc<tt> file with:
+
+ autocmd BufNewFile,BufRead *.{rd,rdoc} set filetype=rdoc
+
+This will make the syntax works.
 
 Updates your <tt>.vimrc<tt> file with:
 
@@ -25,7 +32,7 @@ This will make the syntax works.
 == Information
 
 You maybe contributes to source. So, send a feedback in
-{issue track}[http://github.com/hallison/vim-rdoc/issues].
+{issue tracker}[http://github.com/hallison/vim-rdoc/issues].
 
 Vim-RDoc is hosted on following servers:
 

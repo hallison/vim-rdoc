@@ -6,7 +6,7 @@ declare prefix=".vim"
 
 function vimball {
   printf "* %-40s " "Creating vimball package"
-  vim "vimball" +":%MkVimball! ${pkg_file} ." +":q" &> /dev/null
+  vim ".pkgfiles" +":%MkVimball! ${pkg_file} ." +":q" &> /dev/null
   printf "done\n"
 
   return 0
@@ -30,8 +30,10 @@ function install {
 }
 
 function package {
-  test -f ${pkg_file}   && rm ${pkg_file}   && vimball
-  test -f ${pkg_file}.* && rm ${pkg_file}.* && compress
+  test -f ${pkg_file}   && rm ${pkg_file}
+  vimball
+  test -f ${pkg_file}.* && rm ${pkg_file}.*
+  compress
 }
 
 function doc {
@@ -41,6 +43,31 @@ function doc {
   printf "done\n"
 
   return 0
+}
+
+function news {
+  for remote in github codaset; do
+    git push $remote news
+  done
+}
+
+function version {
+  test -z $1 && {
+    echo "version number is required"
+    exit 1
+  }
+  test -f release.tmp && {
+    git tag -a -s ${1} -F release.tmp
+  } || {
+    echo "release.tmp is required"
+    exit 1
+  }
+}
+
+function release {
+  for remote in $(git remote); do
+    git push --tags $remote master
+  done
 }
 
 test $# -eq 0 && {
