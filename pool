@@ -1,0 +1,54 @@
+declare pkg_name=rdoc
+declare pkg_base=$(dirname "$0")
+declare pkg_version=$(git tag | sort | tail -n 1)
+declare pkg_file="${pkg_name}-${pkg_version#v}.vba"
+declare prefix=".vim"
+
+function vimball {
+  printf "* %-40s " "Creating vimball package"
+  vim "vimball" +":%MkVimball! ${pkg_file} ." +":q" &> /dev/null
+  printf "done\n"
+
+  return 0
+}
+
+function compress {
+  printf "* %-40s " "Compressing package ${pkg_file}"
+  gzip ${pkg_file} &> /dev/null
+  printf "done\n"
+
+  return 0
+}
+
+function install {
+  vimball
+  printf "* %-40s " "Intalling ${pkg_file}"
+  vim ${pkg_file} +":source %" +":q" &> /dev/null
+  printf "done\n"
+
+  return 0
+}
+
+function package {
+  test -f ${pkg_file}   && rm ${pkg_file}   && vimball
+  test -f ${pkg_file}.* && rm ${pkg_file}.* && compress
+}
+
+function doc {
+  printf "* %-40s " "Building documentation"
+  rdoc --main README.rdoc \
+       --title "RDoc.vim" README.rdoc &> /dev/null
+  printf "done\n"
+
+  return 0
+}
+
+test $# -eq 0 && {
+  echo "Arguments required"
+  exit 1
+}
+
+${@}
+
+# vim: filetype=sh
+

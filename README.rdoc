@@ -1,4 +1,4 @@
-= RDoc.vim
+= Vim - RDoc
 
 == Description
 
@@ -7,24 +7,34 @@
 
 == Install
 
-Download the {zipball}[http://www.vim.org/scripts/script.php?script_id=9]
-from Vim script page and extract in your +.vim+ directory.
+Download the {gzipball}[http://www.vim.org/scripts/script.php?script_id=2878]
+from Vim script page and extract in your <tt>.vim</tt> directory.
 
 If you doing checkout from repository, install usin the following commands:
 
- bash does install
+ bash pool install
 
 All sources will be copied to +.vim+ directory automatically.
+
+Updates your <tt>.vimrc<tt> file with:
+
+ autocmd BufNewFile,BufRead *.{rd,rdoc} set filetype=rdoc
+
+This will make the syntax works.
 
 == Information
 
 You maybe contributes to source. So, send a feedback in
-{issue track}[http://github.com/hallison/rdoc.vim/issues].
+{issue track}[http://github.com/hallison/vim-rdoc/issues].
 
-RDoc.vim is hosted on following servers:
+Vim-RDoc is hosted on following servers:
 
-* {Github}[http://github.com/hallison/rdoc.vim]
-* {Codaset}[http://codaset.com/hallison/rdoc.vim]
+* {Github}[http://github.com/hallison/vim-rdoc]
+* {Codaset}[http://codaset.com/hallison/vim-rdoc]
+
+Visit the
+{script homepage}[http://www.vim.org/scripts/script.php?script_id=2878]
+for more information.
 
 == Copyright
 
