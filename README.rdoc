@@ -28,12 +28,6 @@ Or
 
 This instruction will be create a Vimball file and install.
 
-Updates your <tt>.vimrc</tt> file with:
-
- autocmd BufNewFile,BufRead *.{rd,rdoc} set filetype=rdoc
-
-This will make the syntax works.
-
 == Information
 
 You maybe contributes to source. So, send a feedback in
