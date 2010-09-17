@@ -41,6 +41,9 @@ syntax region rdocMonospace start=/\\\@<!\(^\|\A\)\@=+\(\s\|\W\)\@!\(\a\{1,}\s\|
 syntax region rdocLink matchgroup=rdocDelimiter start="\!\?{" end="}\ze\s*[\[\]]" contains=@Spell nextgroup=rdocURL,rdocID skipwhite oneline
 syntax region rdocID   matchgroup=rdocDelimiter start="{"     end="}"  contained
 syntax region rdocURL  matchgroup=rdocDelimiter start="\["    end="\]" contained
+" RDoc inline links:           protocol   optional  user:pass@       sub/domain                 .com, .co.uk, etc      optional port   path/querystring/hash fragment
+"                            ------------ _____________________ --------------------------- ________________________ ----------------- __
+syntax match  rdocInlineURL /https\?:\/\/\(\w\+\(:\w\+\)\?@\)\?\([A-Za-z][-_0-9A-Za-z]*\.\)\{1,}\(\w\{2,}\.\?\)\{1,}\(:[0-9]\{1,5}\)\?\S*/
 
 " Define RDoc markup groups
 syntax match  rdocLineContinue ".$" contained
@@ -75,6 +78,7 @@ HtmlHiLink rdocListItem     Identifier
 HtmlHiLink rdocRule         Identifier
 HtmlHiLink rdocLineBreak    Todo
 HtmlHiLink rdocLink         htmlLink
+HtmlHiLink rdocInlineURL    htmlLink
 HtmlHiLink rdocURL          htmlString
 HtmlHiLink rdocID           Identifier
 HtmlHiLink rdocBold         htmlBold
