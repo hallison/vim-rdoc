@@ -23,7 +23,7 @@ desc install "Install vimball in ${HOME}/.vim/"
 task install {
   package
   status "Intalling ${pkg_file}"
-  vim ${pkg_file} +":source %" +":q" &> /dev/null
+  vim ${pkg_file}.gz +":source %" +":q" &> /dev/null
 }
 
 desc doc "Build documentation"
