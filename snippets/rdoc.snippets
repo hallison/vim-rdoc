@@ -36,3 +36,15 @@ snippet 6=
 	====== ${1:title}
 
 	${2}
+# [item]  description
+snippet []
+	[${1:item}] ${2:description}
+# [*item*]  description
+snippet [*
+	[*${1:item}*] ${2:description}
+# item :: description
+snippet ::
+	${1:item} :: ${2:description}
+# *item* :: description
+snippet :*
+	*${1:item}* :: ${2:description}
