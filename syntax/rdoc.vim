@@ -1,8 +1,8 @@
 " Vim syntax file
 " Language:     RDoc - Ruby Documentation
-" Maintainer:   Hallison Batista <email@hallisonbatista.com>
+" Author:       Hallison Batista <email@hallisonbatista.com>
 " URL:          http://hallisonbatista.com/projetos/rdoc.vim
-" Version:      1.0.0
+" Version:      1.1.0
 " Last Change:  Fri Dec  4 09:47:32 AMT 2009
 " Remark:       Inspired in Markdown syntax written by Ben Williams <benw@plasticboy.com>.
 "               http://www.vim.org/scripts/script.php?script_id=1242
@@ -59,8 +59,9 @@ syntax match  rdocLineBreak /  \+$/
 " RDoc pre-formatted markup
 " syntax region rdocCode      start=/\s*``[^`]*/          end=/[^`]*``\s*/
 syntax match  rdocCode  /^\s*\n\(\(\s\{1,}[^ ]\|\t\+[^\t]\).*\n\)\+/
-syntax region rdocCode  start="<pre[^>]*>"         end="</pre>"
-syntax region rdocCode  start="<code[^>]*>"        end="</code>"
+syntax region rdocCode  start="<tt[^>]*>"   end="</tt>"
+syntax region rdocCode  start="<pre[^>]*>"  end="</pre>"
+syntax region rdocCode  start="<code[^>]*>" end="</code>"
 
 " RDoc HTML headings
 syntax region htmlH1  start="^\s*="       end="\($\)" contains=@Spell
