@@ -10,7 +10,7 @@ RDoc have a support for snippets. Therefore, it's recommended that you use
 
 == Install
 
-Download the +gzipball+ from Vim
+Download the +gzipball+ from
 {script homepage}[http://www.vim.org/scripts/script.php?script_id=2878]
 and open the package using Vim and use the command `:source %` or run the
 following command:
@@ -20,13 +20,11 @@ following command:
 Done! All files will be extracted in your Vim home directory.
 If you checkout from repository, install using the following commands:
 
- bash do install
+ bake install
 
-Or
-
- ./do install
-
-This instruction will be create a Vimball file and install.
+The `bake` command is distributed with
+{Bash-Toolbox}[http://github.com/codigorama/bash-toolbox/]. This instruction
+will be create a Vimball file and install.
 
 == Information
 
@@ -44,7 +42,7 @@ for more information.
 
 == Copyright
 
-Copyright (c) 2009 Hallison Batista
+Copyright (c) 2009,2010,2011 Hallison Batista
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
