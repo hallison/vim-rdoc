@@ -20,11 +20,7 @@ following command:
 Done! All files will be extracted in your Vim home directory.
 If you checkout from repository, install using the following commands:
 
- bash do install
-
-Or
-
- ./do install
+ make install
 
 This instruction will be create a Vimball file and install.
 
@@ -33,10 +29,7 @@ This instruction will be create a Vimball file and install.
 You maybe contributes to source. So, send a feedback in
 {issue tracker}[http://github.com/hallison/vim-rdoc/issues].
 
-Vim-RDoc is hosted on following servers:
-
-* {Github}[http://github.com/hallison/vim-rdoc]
-* {Codaset}[http://codaset.com/hallison/vim-rdoc]
+Vim-RDoc is hosted on following {Github}[http://github.com/hallison/vim-rdoc].
 
 Visit the
 {script homepage}[http://www.vim.org/scripts/script.php?script_id=2878]
@@ -44,7 +37,7 @@ for more information.
 
 == Copyright
 
-Copyright (c) 2009 Hallison Batista
+Copyright (c) 2009,2010,2011 Hallison Batista
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
